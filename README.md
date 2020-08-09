@@ -47,7 +47,7 @@ HTML + CSS + JS:
 
 **Implementation:**<br/> 
 Test:
-Haven't have times to learn use Unit Test so all testing is by myself.
+Haven't have times to learn and use Unit Test so all testing is by myself.
 
 Compile:
 1. Use Docker to run postgresql DB in background.
