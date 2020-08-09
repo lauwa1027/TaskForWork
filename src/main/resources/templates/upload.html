@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Upload Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        .modal {
+            display: block;
+            position: fixed; /* Stay in place */
+            z-index: 9; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            /*background-color: rgb(0,0,0); /* Fallback color */
+            /*background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .search-results{
+            display: none;
+        }
+        .modal-content {
+            display: none;
+        }
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: underline;
+        }
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Modal Content */
+        .modal-content{
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+<div id="modal" class="modal">
+<h1>WareHouse Inventory System</h1>
+<!-- search function -->
+Search Product: <input type="text" id="search">
+<button id="find">Search</button>
+<br/>
+<!-- display the search result -->
+<div class="search-results"  id="search-results">
+    <br/><h2>Search Result: </h2>
+</div>
+
+<br/>
+<!-- Upload function -->
+<form class="upload" id="upload" action="/uploadFile" method="post" enctype="multipart/form-data">
+    Select a CSV file to upload:
+    <input type="file" name="file" id="fileToUpload">
+    <input type="submit" value="Upload File" name="submit">
+</form>
+
+<div class="modal-content" id="modal-content">
+    <span class="close">&times;</span>
+    <form id="transfer">
+        <fieldset>
+            <legend>Transfer Form:</legend>
+            From:
+            <input type="text" name="startLocation" id="startLocation" readonly><br/>
+            Transfer product:
+            <input type="text" name="code" id="product" readonly>
+            <input type="text" name="number" id="number">
+            Weights<br/>
+            To:
+            <select name="destination" id="locationList">
+            </select>
+            <br/>
+            <input type="submit" value="Update" name="update">
+        </fieldset>
+    </form>
+</div>
+</div>
+<script type="text/javascript" src='/js/jquery.js'></script>
+<script type="text/javascript" src='/js/search.js'></script>
+</body>
+</html>
